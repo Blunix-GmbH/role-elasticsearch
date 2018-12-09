@@ -1,0 +1,4 @@
+- name: install elasticsearch
+  apt:
+    name: elasticsearch
+    state: present
