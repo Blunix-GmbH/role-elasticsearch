@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Peter Thurner
+  company: Blunix GmbH
+  license: Apache2
+  min_ansible_version: 2.6.4
+
+  platforms:
+  - name: Debian
+    versions:
+    - stretch
+  - name: Ubuntu
+    versions:
+    - xenial
+
+  galaxy_tags:
+  - blunix
+  - elasticsearch
+
+dependencies: []

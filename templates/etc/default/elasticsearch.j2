@@ -1,0 +1,5 @@
+{{ ansible_managed | comment }}
+
+{% for key in elasticsearch_default_config %}
+{{ key }}={{ elasticsearch_default_config[key] }}
+{% endfor %}

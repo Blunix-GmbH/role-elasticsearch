@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+
+  vars:
+    # the values will be written as yaml to /etc/elasticsearch/elasticsearch.yml
+    elasticsearch_config:
+      node.name: "{{ ansible_hostname }}"
+      network.bind_host: 127.0.0.1
+
+    # key=value pairs for /etc/default/elasticsearch
+    elasticsearch_default_config:
+      START_DAEMON: "true"
+
+  roles:
+    - role: role-elasticsearch

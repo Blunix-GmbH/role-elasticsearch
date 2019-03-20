@@ -1,0 +1,26 @@
+- name: import elasticsarch repository key
+  apt_key:
+    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: install apt-transport-https
+  apt:
+    pkg:
+      - apt-transport-https
+    state: present
+
+- name: setup elasticsarch apt repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main
+    state: present
+    filename: elasticsearch
+
+- name: install elasticsearch apt requirements
+  apt:
+    pkg: openjdk-8-jdk
+    state: present
+
+- name: install elasticsearch apt packages
+  apt:
+    pkg: elasticsearch
+    state: present
