@@ -1,12 +1,16 @@
 # the values will be written as yaml to /etc/elasticsearch/elasticsearch.yml
 elasticsearch_config:
   node.name: "{{ ansible_hostname }}"
-  network.bind_host: 127.0.0.1
+  network.host: 127.0.0.1
+  http.port: 9200
   path.data: /var/lib/elasticsearch
   path.logs: /var/log/elasticsearch
 
 # key=value pairs for /etc/default/elasticsearch
 elasticsearch_default_config:
-  START_DAEMON: "true"
   ES_PATH_CONF: /etc/elasticsearch
   ES_STARTUP_SLEEP_TIME: 5
+  PID_DIR: /run/elasticsearch
+
+# Elasticsearch version string for "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
+elasticsearch_apt_version: 7.x

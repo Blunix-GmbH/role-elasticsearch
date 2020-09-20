@@ -1,4 +1,4 @@
-{{ ansible_managed | comment }}
+# {{ ansible_managed }}
 
 {% for key in elasticsearch_default_config %}
 {{ key }}={{ elasticsearch_default_config[key] }}
