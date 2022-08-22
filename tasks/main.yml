@@ -3,7 +3,7 @@
     name:
       - apt-transport-https
       - gnupg2
-      - openjdk-14-jdk-headless
+      - openjdk-17-jdk-headless
     state: present
 
 - name: import elasticsarch repository key
